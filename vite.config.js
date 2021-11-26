@@ -19,7 +19,7 @@ export default defineConfig({
         return matcher
       },
       shortcuts: [
-        {'foo': 'i-logos-svelte-icon w-16rem h-16rem'},
+        {'logo': 'i-logos-svelte-icon w-6em h-6em'},
       ],
       presets: [
         presetUno(),

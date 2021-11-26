@@ -1,9 +1,21 @@
 <script lang="ts">
-    let foo = false
+    import { fade, fly } from 'svelte/transition';
+    let logo = false
+    const toggleLogo = () => {
+        logo = !logo
+    }
+    $: button = logo ? 'Hide logo' : 'Show logo'
 </script>
 <main>
-  <span class:foo={foo}></span>
+  {#if logo}
+    <span class:logo={logo} in:fly="{{ y: 200, duration: 2000 }}" out:fade></span>
+  {/if}
+
   <h1 class="animate-bounce">Hello Typescript!</h1>
+
+  <br/>
+
+  <button on:click={toggleLogo}>{button}</button>
 
 </main>
 
@@ -19,7 +31,6 @@
     margin: 0 auto;
   }
 
-  .foo {}
 
   h1 {
     color: #ff3e00;
