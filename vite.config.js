@@ -14,7 +14,7 @@ export default defineConfig({
       preprocess(matcher) {
         if (matcher.startsWith('class:') && matcher.contains('=')) {
           const clazz = matcher.slice(6)
-          return clazz.substring(clazz.indexOf('='))
+          return clazz.substring(0,clazz.indexOf('='))
         }
         return matcher
       },
