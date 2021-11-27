@@ -7,14 +7,19 @@ import presetIcons from '@unocss/preset-icons'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    svelte(),
     UnoCss({
       //include: [/\.svelte$/],
       inspector: true,
       preprocess(matcher) {
-        if (matcher.startsWith('class:') && matcher.indexOf('=') > -1) {
+        if (matcher.startsWith('class:') && matcher.indexOf('=', 5) > -1) {
           const clazz = matcher.slice(6)
           console.log(`${matcher} => ${clazz.substring(0,clazz.indexOf('='))}`)
           return clazz.substring(0, clazz.indexOf('='))
+        }
+        if (matcher.startsWith('data-')) {
+          console.log(matcher.slice(5))
+          return matcher.slice(5)
         }
         return matcher
       },
@@ -31,6 +36,5 @@ export default defineConfig({
         }),
       ]
     }),
-    svelte(),
   ]
 })

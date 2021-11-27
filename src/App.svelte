@@ -1,13 +1,18 @@
 <script lang="ts">
     import { fade, fly } from 'svelte/transition';
     let logo = false
+    let red = false
     const toggleLogo = () => {
         logo = !logo
     }
+    const toggleSpan = () => {
+        red = !red
+    }
     $: button = logo ? 'Hide logo' : 'Show logo'
+    $: span = red ? 'Normal' : 'Red'
 </script>
 <main>
-  <span class="i-logos-svelte-icon w-6em h-6em transform transition-900 !hover:rotate-180"></span>
+  <span class="i-logos-svelte-icon w-6em h-6em transform transition-800 !hover:rotate-180"></span>
 
   {#if logo}
     <span class:logo={logo} in:fly="{{ y: 200, duration: 2000 }}" out:fade></span>
@@ -17,7 +22,16 @@
 
   <br/>
 
+  <div class:bg-red-300={red}>BG Color should change</div>
+
+  <br/>
+
   <button on:click={toggleLogo}>{button}</button>
+  <button on:click={toggleSpan}>Change BG Color: {span}</button>
+
+  <br />
+
+  <div data-absolute=" " data-mt-20px=" " data-bottom-0=" ">data-***</div>
 
 </main>
 
