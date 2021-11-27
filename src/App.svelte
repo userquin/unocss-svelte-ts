@@ -1,5 +1,7 @@
+<!-- @unocss-include -->
 <script lang="ts">
-    import { fade, fly } from 'svelte/transition';
+    import { fade, fly } from 'svelte/transition'
+    import '/@unocss/app.css'
     let logo = false
     let red = false
     const toggleLogo = () => {
@@ -12,7 +14,7 @@
     $: span = red ? 'Normal' : 'Red'
 </script>
 <main>
-  <span class="i-logos-svelte-icon w-6em h-6em transform transition-800 !hover:rotate-180"></span>
+  <span class="logo"></span>
 
   {#if logo}
     <span class:logo={logo} in:fly="{{ y: 200, duration: 2000 }}" out:fade></span>

@@ -11,6 +11,7 @@ export default defineConfig({
     UnoCss({
       //include: [/\.svelte$/],
       inspector: true,
+      mode: 'per-module',
       preprocess(matcher) {
         if (matcher.startsWith('class:') && matcher.indexOf('=', 5) > -1) {
           const clazz = matcher.slice(6)
