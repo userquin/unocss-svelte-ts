@@ -11,7 +11,6 @@ export default defineConfig({
       //include: [/\.svelte$/],
       inspector: true,
       preprocess(matcher) {
-        console.log(matcher)
         if (matcher.startsWith('class:') && matcher.indexOf('=') > -1) {
           const clazz = matcher.slice(6)
           console.log(`${matcher} => ${clazz.substring(0,clazz.indexOf('='))}`)
