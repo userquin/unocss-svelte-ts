@@ -7,7 +7,7 @@
     $: button = logo ? 'Hide logo' : 'Show logo'
 </script>
 <main>
-  <span class="i-logos-svelte-icon w-6em h-6em transform transition-800 hover:rotate-180"></span>
+  <span class="i-logos-svelte-icon w-6em h-6em transform transition-800 !hover:rotate-180"></span>
 
   {#if logo}
     <span class:logo={logo} in:fly="{{ y: 200, duration: 2000 }}" out:fade></span>
