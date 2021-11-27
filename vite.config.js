@@ -7,7 +7,6 @@ import presetIcons from '@unocss/preset-icons'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    svelte(),
     UnoCss({
       //include: [/\.svelte$/],
       inspector: true,
@@ -37,5 +36,6 @@ export default defineConfig({
         }),
       ]
     }),
+    svelte(),
   ]
 })
