@@ -1,7 +1,7 @@
 <!-- @unocss-include -->
 <script lang="ts">
     import { fade, fly } from 'svelte/transition'
-    import '/@unocss/app.css'
+    //import '/@unocss/app.css'
     let logo = false
     let red = false
     const toggleLogo = () => {
