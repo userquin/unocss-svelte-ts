@@ -33,7 +33,7 @@
 
   <br />
 
-  <div data-absolute=" " data-mt-20px=" " data-bottom-0=" ">data-***</div>
+  <div data-absolute data-mt-20px data-b-0>data-***</div>
 
 </main>
 

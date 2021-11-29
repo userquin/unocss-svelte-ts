@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import UnoCss from 'unocss/vite'
-import { presetUno } from 'unocss'
+import { presetUno, presetAttributify } from 'unocss'
 import presetIcons from '@unocss/preset-icons'
 
 // https://vitejs.dev/config/
@@ -9,7 +9,8 @@ export default defineConfig({
   plugins: [
     UnoCss({
       //include: [/\.svelte$/],
-      inspector: true,
+      // enforce: 'pre',
+      // inspector: true,
       mode: 'per-module',
       preprocess(matcher) {
         if (matcher.startsWith('class:') && matcher.indexOf('=', 5) > -1) {
@@ -27,6 +28,12 @@ export default defineConfig({
         {'logo': 'i-logos-svelte-icon w-6em h-6em transform transition-800 hover:rotate-180'},
       ],
       presets: [
+        presetAttributify({
+          // prefix: 'data-',
+          strict: false,
+          // prefixedOnly: true,
+          nonValuedAttribute: true,
+        }),
         presetUno(),
         presetIcons({
           extraProperties: {
