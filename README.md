@@ -2,7 +2,7 @@
 
 **DEPRECATED**: included on [unocss per-module branch](https://github.com/antfu/unocss/tree/feat/per-module-import)
 
-The playgroung is here: https://github.com/antfu/unocss/tree/feat/per-module-import/test/fixtures/vite-svelte
+The playground is here: https://github.com/antfu/unocss/tree/feat/per-module-import/test/fixtures/vite-svelte
 
 To test the playground: `pnpm install && pnpm run build` from root, then go to `test/fixtures/vite-svelte` and run `pnpm install && pnpm run dev`.
 
